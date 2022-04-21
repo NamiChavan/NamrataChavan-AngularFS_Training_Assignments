@@ -1,1 +1,1 @@
-# NamrataChavan-AngularFS_Training_Assignments
+#AngularFS_Training_Assignments
