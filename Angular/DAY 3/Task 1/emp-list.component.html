@@ -1,0 +1,48 @@
+<!-- <h3>Working with slice pipe in Angular</h3>
+<hr/>
+
+<button  (click)="nextItems_click()">Next >> </button>
+<br/><br/>
+ <table width="500"  cellspacing="0"  cellpadding="3"  border="2">
+  <tr>
+    <th>Emp Number</th>
+    <th>Emp Name</th>
+    <th>Emp Job</th>
+    <th>Emp Salary</th>
+    <th>Emp Deptno</th>
+  </tr>
+
+  <tr *ngFor="let item of empsArray | slice : start : end">
+      <td>{{item.empno}}</td>
+      <td>{{item.ename | titlecase}}</td>
+      <td>{{item.job | uppercase}}</td>
+      <td>{{item.sal | currency}}</td>
+      <td>{{item.deptno}}</td>
+  </tr>
+</table>
+
+<hr/> -->
+
+<!-- <p> {{empsArray[0] | json }} </p> -->
+
+<h1>Application Developmnet Using Angular</h1>
+<hr/>
+<div class="row">
+  
+  <div *ngFor="let item of empsArray | slice : start : end" class="column">
+      <div  class="card">
+  
+          <div class="container">
+            <h4><b> Emp No :{{item.empno}}</b></h4>
+            <p> Emp Name : {{item.ename | titlecase}}</p>
+            <p>Job :{{item.job | uppercase}}</p>
+            <p>Salary: {{item.sal | currency}}</p>
+            <p>Dept NO :{{item.deptno}}</p>
+          </div>
+
+          
+        </div>
+       
+   </div>
+   <button [disabled]="!showButton" (click)="nextItems_click()">Next >> </button>
+</div>
