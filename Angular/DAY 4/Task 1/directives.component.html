@@ -1,0 +1,119 @@
+<h1>Directives Assignment!</h1>
+
+
+<style>
+    .c1
+    {
+        border: 1px solid gray;
+        border-radius : 10px;
+        width : 200px;
+        padding : 5px;
+        text-align: center;
+        margin: 5px;
+        float:left;
+        box-shadow: 5px 5px 2px black;
+    }
+    .bg1{ background-color :  lightblue;  }
+  .bg2{ background-color :  lightgreen}; 
+
+
+  /* img {
+        width: 80px;
+        height: auto;
+    } */
+
+
+
+
+  </style>
+  
+
+
+<strong>Please click :</strong>
+<br>
+ <br>
+<img src="assets/table.png" width="100" height="100" value (click)="set_Table()" (mouseover)="set_Table()" />
+<img src="assets/small.png" width="100" height="100" (click)="set_Small()" (mouseover)="set_Small()" />
+<img src="assets/big.png" width="100" height="100" (click)="set_Large()" (mouseover)="set_Large()" />
+<img src="assets/list.png" width="100" height="100" (click)="set_List()" (mouseover)="set_List()" />
+
+<br>
+<br>
+
+
+<section  [ngSwitch]="displayMode">
+
+    <!-- Content for List Mode -->
+      <article *ngSwitchCase=" 'List' ">
+        <ul>
+            <li  *ngFor="let item of ProductsArray">
+                This
+                <span style="color:blue;text-decoration: underline;">{{item.ProductName}}</span>
+                product is available in Rs
+                <span [ngStyle]="{ 'color': (item.ProductName == 'LG' ? 'Red' : 'lightseagreen')}"> {{item.Price}}</span>
+                
+            </li>
+          </ul>
+    </article>
+  
+    <!-- Content for Table Mode -->
+      <article *ngSwitchCase=" 'Table' ">
+  
+        <table border="2" cellspacing="0" cellpadding="5" width="50">
+            <tr class="bg1"> 
+            <th>Product Id:</th>    
+              <th>Product Name:</th>
+              <th>Category</th>
+              <th>Image</th>
+              <th>Price</th>
+            </tr>
+        
+            <tr *ngFor="let item of ProductsArray; let i = index; let isEven = even; let isOdd = odd"
+                [ngClass]="{'bg2':isEven, 'bg3':isOdd}">
+              <td>{{i + 1}}</td>
+              <td>{{item.ProductName}}</td>
+              <td>{{item.Cateogory}}</td>
+              <td><img src="{{item.Image}}" width="100" height="100"/></td>
+              <td>{{item.Price}}</td>
+            </tr>
+        
+          </table>
+            
+    </article>
+  
+
+      <article *ngSwitchCase=" 'Large' ">
+        <div   *ngFor="let item of ProductsArray" class="c1">
+           
+            <span align="center"><img src={{item.Image}} width="200" height="200" /></span>
+            <u>  Product Name:{{item.ProductName}}</u>  <br/>
+            Price:<span style="color:Green;"> {{item.Price}} </span>   <br/>
+            
+          </div>
+
+  
+     </article>
+
+         
+
+  
+    <article *ngSwitchCase=" 'Small' ">
+
+        <div   *ngFor="let item of ProductsArray" class="c1">
+            <h3 style="margin: 2px;color:Red;"> Product ID: {{item.ProId}} </h3>
+            <span align="center"><img src={{item.Image}} width="50" height="50" /></span>
+            <u>  Product Name:{{item.ProductName}}</u>  <br/>
+            Price:<span style="color:Green;"> {{item.Price}} </span>   <br/>
+            Category:{{item.Cateogory}}
+            <br>
+           
+          </div>
+
+      
+
+   </article>
+      <article *ngSwitchDefault> This is default mode </article>
+  </section>
+
+
+

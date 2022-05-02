@@ -1,0 +1,21 @@
+<!-- <p>fancycard-table works!</p> -->
+
+
+<table width="500" style="background-color: white; border-left: 5px solid green; padding: 5px;"  cellspacing="0"  cellpadding="3"  border="2">
+    <tr>
+      <th>Emp Number</th>
+      <th>Emp Name</th>
+      <th>Emp Job</th>
+      <th>Emp Salary</th>
+      <th>Emp Deptno</th>
+    </tr>
+  
+    <tr *ngFor="let item of empsArray">
+        <td>{{item.empno}}</td>
+        <td>{{item.ename | titlecase}}</td>
+        <td>{{item.job | uppercase}}</td>
+        <td>{{item.sal | currency}}</td>
+        <td>{{item.deptno}}</td>
+    </tr>
+  </table>
+  
