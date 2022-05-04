@@ -1,0 +1,40 @@
+<h3>Working with RxJS library</h3>
+<hr/>
+
+<input type="text"  [(ngModel)]="todo"  placeholder="task"  />
+<button (click)="addData_click()">Add Task</button>
+<br/>
+<br/>
+<br/>
+<table border="2" width="400" cellspacing="0" cellpadding="5">
+    <tr>
+      <th>Task</th>
+     
+    
+    </tr>
+  
+    <tr *ngFor="let item of todoArray">
+        <td [ngClass]="item.isChecked ? 'strikethrough' : 'null'" *ngIf="!item.isEditable" >{{item.task}}</td>
+        <td  *ngIf="item.isEditable" >
+          <input type="text"  [(ngModel)]="item.task"  placeholder="task"  />
+        </td>
+        <td>
+          <input type="checkbox"  [(ngModel)]="item.isChecked"  />
+        </td>
+        <td>
+          <button *ngIf="!item.isEditable" (click)="edit_click(item.id)"  href="javascript:void(0);">
+            Edit
+          </button>
+          <button *ngIf="item.isEditable" (click)="edit_click(item.id)"  href="javascript:void(0);">
+            Save
+          </button>
+        </td>
+        <td>
+          <button (click)="delete_click(item.id)"  href="javascript:void(0);">
+            Delete
+          </button>
+        </td>
+    </tr>
+  
+  
+  </table>
