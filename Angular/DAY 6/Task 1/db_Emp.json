@@ -1,0 +1,32 @@
+{
+  "Emp": [
+    {
+      "id": 10,
+      "ename": "akshay",
+      "job": "Manager",
+      "sal": "50000",
+      "deptno": 1
+    },
+    {
+      "id": 20,
+      "ename": "john",
+      "job": "QA",
+      "sal": "20000",
+      "deptno": 2
+    },
+    {
+      "id": 21,
+      "ename": "namrata",
+      "job": "developer",
+      "sal": "70000",
+      "deptno": "10"
+    },
+    {
+      "id": 22,
+      "ename": "sandy",
+      "job": "QA",
+      "sal": "80000",
+      "deptno": "12"
+    }
+  ]
+}
