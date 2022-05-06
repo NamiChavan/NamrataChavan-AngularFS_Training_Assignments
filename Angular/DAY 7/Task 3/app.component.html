@@ -1,0 +1,45 @@
+
+
+<h3>Working with custom directives</h3>
+<hr/>
+
+<p style="text-shadow: 3px 3px;" appCustomDirectives1>Attribute Custom Directive Text.</p>
+
+<p  style="text-shadow: 3px 3px;" [appCustomDirectives1]="'blue'">Attribute Custom Directive Text.</p>
+
+<p style="text-shadow: 3px 3px;"[appCustomDirectives1]="'green'">Attribute Custom Directive Text.</p>
+
+<hr/>
+<!-- 
+-------------------------------------------------------------------------------- -->
+
+
+--TASK 2
+<h1>Div1</h1>
+<div *appCustomDirectives2="'Scott'">
+  
+  <p>This Content is for Scott Admin</p>
+</div> 
+
+
+<h1>Div2</h1>
+<div *appCustomDirectives2="'Smith'">
+  
+  <p>This Content is for Smith Admin</p>
+</div> 
+
+ <h1>Div3</h1>
+<div *appCustomDirectives2="'abc'">
+
+  <p>This Content is for abc Admin</p>
+</div>
+
+<h1>Div4</h1>
+<div *appCustomDirectives2="'Robert'">
+  
+  <p>This Content is for Robert Admin</p>
+</div> 
+
+
+
+
