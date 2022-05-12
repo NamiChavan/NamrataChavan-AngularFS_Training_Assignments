@@ -1,0 +1,13 @@
+<h1>Departments</h1>
+<hr>
+Enter the department ID: <input type="text" [(ngModel)]="id">
+Enter the department name: <input type="text" [(ngModel)]="dname">
+
+<hr>
+<button (click)="addDepartment_Click()">Add Department</button> |
+<button (click)="deleteDepartment_Click(id)">Delete Department</button>
+<hr>
+<ul *ngFor="let item of depts">
+    <li>{{item.dname}}</li>
+
+</ul>>
